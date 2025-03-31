@@ -7,7 +7,7 @@ services:
       - .:/app
     command: ["java", "-jar", "/app/asseco-0.0.1-SNAPSHOT.jar"]
     ports:
-      - "8082:8081"
+      - "8080:80"
     environment:
       - GITHUB_TOKEN=${GITHUB_TOKEN}
       - JAVA_OPTS=-Xmx512m
