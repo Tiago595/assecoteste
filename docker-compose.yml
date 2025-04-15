@@ -7,11 +7,11 @@ services:
       - .:/app
     command: ["java", "-jar", "/app/asseco-0.0.1-SNAPSHOT.jar"]
     ports:
-      - "8080:80"
+      - "8080:8080"
     environment:
       - GITHUB_TOKEN=${GITHUB_TOKEN}
       - JAVA_OPTS=-Xmx512m
     entrypoint: >
       sh -c "apt update && apt install -y wget &&
-              wget --header='Authorization: token ${GITHUB_TOKEN}' -O /app/asseco-0.0.1-SNAPSHOT.jar https://maven.pkg.github.com/Tiago595/assecoteste/com/example/assecoteste/0.0.1-SNAPSHOT/assecoteste-0.0.1-20250331.200840-1.jar &&
+              wget --header='Authorization: token ${GITHUB_TOKEN}' -O /app/asseco-0.0.1-SNAPSHOT.jar https://maven.pkg.github.com/Tiago595/assecoteste/com/example/assecoteste/0.0.1-SNAPSHOT/assecoteste-0.0.1-20250331.223635-3.jar &&
              java -jar /app/asseco-0.0.1-SNAPSHOT.jar"
